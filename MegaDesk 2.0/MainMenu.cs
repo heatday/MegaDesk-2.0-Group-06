@@ -12,6 +12,7 @@ namespace MegaDesk_Muzo
 {
     public partial class MainMenu : Form
     {
+        QuoteManager QuoteManager = new QuoteManager();
         public MainMenu()
         {
             InitializeComponent();

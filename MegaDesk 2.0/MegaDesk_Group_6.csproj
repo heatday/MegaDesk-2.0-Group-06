@@ -68,6 +68,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuoteManager.cs" />
     <Compile Include="SearchQuotes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +118,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="computer-desktop-with-pen-tablet-on-wood-table-vector-4938874-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Quotes.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

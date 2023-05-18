@@ -14,11 +14,12 @@ namespace MegaDesk_Muzo
 {
     public partial class AddQuote : Form
     {
-        public AddQuote()
-
-
-
+        QuoteManager QuoteManager;
+        MainMenu menu;
+        public AddQuote(ref QuoteManager quoteManager, MainMenu menu)
         {
+            QuoteManager = quoteManager;
+            this.menu = menu;
             InitializeComponent();
 
             // Set the minimum and maximum values for the width and depth 
@@ -33,89 +34,33 @@ namespace MegaDesk_Muzo
             
 
             // Add items to the Surface materials combo box
-            foreach (DesktopMaterial material in Enum.GetValues(typeof(DesktopMaterial)))
+            foreach (SurfaceMaterial material in Enum.GetValues(typeof(SurfaceMaterial)))
             {
                 SurCombo.Items.Add(material.ToString().ToLower());
             }
 
             // Add items to Delivery combo box
+            DelCombo.Items.Add("None");
             DelCombo.Items.Add("3 days");
             DelCombo.Items.Add("5 days");
             DelCombo.Items.Add("7 days");
-            // Attach event handler to GetQuoteButton Click event
-            getquotebutton.Click += GetQuoteButton_Click;
         }
 
-
-
-
-        private void label1_Click(object sender, EventArgs e)
+        private void getquotebutton_Click_1(object sender, EventArgs e)
         {
-
+            double width = double.Parse(WidthNum.Text);
+            double depth = double.Parse(DepthNum.Text);
+            int drawerCount = int.Parse(DrawersNum.Text);
+            string material = SurCombo.Text.ToLower().TrimEnd();
+            string name = textBox1.Text;
+            string rush = DelCombo.Text;
+                      
+            
+            QuoteManager.AddQuote(depth, width, drawerCount, material, name, rush);
+            QuoteManager.SaveQuote();
+            this.Close();
+            menu.Show();
+       
         }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void numericUpDown3_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void GetQuoteButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // Get the input values from the form
-                int width = (int)WidthNum.Value;
-                int depth = (int)DepthNum.Value;
-                int drawers = (int)DrawersNum.Value;
-                string customerName = textBox1.Text;
-                string surfaceMaterial = SurCombo.SelectedItem?.ToString();
-                string deliveryTime = DelCombo.SelectedItem?.ToString();
-
-                // Validate the input values
-                if (string.IsNullOrEmpty(customerName))
-                {
-                    throw new Exception("Please enter the customer name.");
-                }
-
-                if (drawers < 1 || drawers > 7)
-                {
-                    throw new Exception("Invalid number of drawers. Please enter a value between 1 and 7.");
-                }
-
-                if (width < Desk.MinWidth || width > Desk.MaxWidth)
-                {
-                    throw new Exception("Invalid width value. Please enter a value between " + Desk.MinWidth + " and " + Desk.MaxWidth + ".");
-                }
-
-                if (depth < Desk.MinDepth || depth > Desk.MaxDepth)
-                {
-                    throw new Exception("Invalid depth value. Please enter a value between " + Desk.MinDepth + " and " + Desk.MaxDepth + ".");
-                }
-
-                if (string.IsNullOrEmpty(surfaceMaterial))
-                {
-                    throw new Exception("Please select a surface material.");
-                }
-
-                if (string.IsNullOrEmpty(deliveryTime))
-                {
-                    throw new Exception("Please select a delivery time.");
-                }
-
-                // Your code for calculating the quote goes here...
-
-                MessageBox.Show("Quote calculated successfully!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error calculating quote: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-
     }
 }

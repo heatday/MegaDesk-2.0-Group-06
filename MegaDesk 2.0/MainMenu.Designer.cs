@@ -109,7 +109,7 @@ namespace MegaDesk_Muzo
 
     private void ViewFirstFormClick(object sender, EventArgs e)
         {
-            AddQuote addQuoteForm = new AddQuote();
+            AddQuote addQuoteForm = new AddQuote(ref QuoteManager, this);
             addQuoteForm.Show();
             this.Hide();
         }

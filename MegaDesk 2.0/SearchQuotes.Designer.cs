@@ -53,11 +53,11 @@
             this.SurMaterials.Size = new System.Drawing.Size(121, 24);
             this.SurMaterials.TabIndex = 1;
             // Populate the SurMaterials ComboBox with enum names
-            SurMaterials.Items.Add(Desk.DesktopMaterial.Laminate.ToString());
-            SurMaterials.Items.Add(Desk.DesktopMaterial.Oak.ToString());
-            SurMaterials.Items.Add(Desk.DesktopMaterial.Rosewood.ToString());
-            SurMaterials.Items.Add(Desk.DesktopMaterial.Veneer.ToString());
-            SurMaterials.Items.Add(Desk.DesktopMaterial.Pine.ToString());
+            SurMaterials.Items.Add(SurfaceMaterial.Laminate.ToString());
+            SurMaterials.Items.Add(SurfaceMaterial.Oak.ToString());
+            SurMaterials.Items.Add(SurfaceMaterial.Rosewood.ToString());
+            SurMaterials.Items.Add(SurfaceMaterial.Veneer.ToString());
+            SurMaterials.Items.Add(SurfaceMaterial.Pine.ToString());
             // 
             // SearchQuotes
             // 
