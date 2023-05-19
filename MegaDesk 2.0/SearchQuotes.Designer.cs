@@ -7,7 +7,16 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-        
+        private System.Windows.Forms.DataGridView dataGridView1 = new System.Windows.Forms.DataGridView
+        {
+            AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill,
+            ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize,
+            Location = new System.Drawing.Point(12, 80),
+            Name = "dataGridView1",
+            Size = new System.Drawing.Size(776, 358),
+            TabIndex = 2
+        };
+
 
 
         /// <summary>
@@ -31,33 +40,55 @@
         /// </summary>
         private void InitializeComponent()
         {
+            
             this.label1 = new System.Windows.Forms.Label();
             this.SurMaterials = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
-            this.label1.Location = new System.Drawing.Point(75, 41);
+            this.label1.Location = new System.Drawing.Point(86, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 25);
+            this.label1.Size = new System.Drawing.Size(159, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Surface Materials:";
+            this.label1.Text = "Search Materials";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // SurMaterials
             // 
-            this.SurMaterials.FormattingEnabled = true;
+            //this.SurMaterials.FormattingEnabled = true;
+            //this.SurMaterials.Items.AddRange(new object[] {
+            //"All Materials",
+            //"Laminate",
+            //"Oak",
+            //"Rosewood",
+            //"Veneer",
+            //"Pine"});
+            this.SurMaterials.Items.AddRange(new object[] {
+            "All Materials",
+            SurfaceMaterial.Laminate.ToString(),
+            SurfaceMaterial.Oak.ToString(),
+            SurfaceMaterial.Rosewood.ToString(),
+            SurfaceMaterial.Veneer.ToString(),
+            SurfaceMaterial.Pine.ToString()});
             this.SurMaterials.Location = new System.Drawing.Point(251, 42);
             this.SurMaterials.Name = "SurMaterials";
             this.SurMaterials.Size = new System.Drawing.Size(121, 24);
             this.SurMaterials.TabIndex = 1;
-            // Populate the SurMaterials ComboBox with enum names
-            SurMaterials.Items.Add(SurfaceMaterial.Laminate.ToString());
-            SurMaterials.Items.Add(SurfaceMaterial.Oak.ToString());
-            SurMaterials.Items.Add(SurfaceMaterial.Rosewood.ToString());
-            SurMaterials.Items.Add(SurfaceMaterial.Veneer.ToString());
-            SurMaterials.Items.Add(SurfaceMaterial.Pine.ToString());
+            this.SurMaterials.SelectedIndexChanged += new System.EventHandler(this.SurMaterials_SelectedIndexChanged);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 80);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(776, 358);
+            this.dataGridView1.TabIndex = 2;
+            this.Controls.Add(this.dataGridView1);
             // 
             // SearchQuotes
             // 
@@ -68,8 +99,9 @@
             this.Controls.Add(this.label1);
             this.Name = "SearchQuotes";
             this.Text = "SearchQuotes";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout(); 
+            this.PerformLayout();
 
         }
 
@@ -77,5 +109,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox SurMaterials;
+
+
     }
 }

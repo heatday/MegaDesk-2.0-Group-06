@@ -19,6 +19,7 @@ namespace MegaDesk_Muzo
         public Desk Desk { get { return desk; } }
         public double Cost { get { return cost; } }
         public string CustomerName { get { return customerName; } }
+        public SurfaceMaterial SurfaceMaterial { get; set; }
         public string RushType { get { return rushType; } }
         public string Date { get { return date; } }
         // CONSTRUCTOR
@@ -62,22 +63,27 @@ namespace MegaDesk_Muzo
                     rushCost = 0;
                     break;
             }
-            switch (Desk.Material.ToLower())
+            switch (desk.Material.ToLower())
             {
                 case "oak":
                     materialCost = (double)SurfaceMaterial.Oak;
+                    SurfaceMaterial = SurfaceMaterial.Oak;
                     break;
                 case "laminate":
                     materialCost = (double)SurfaceMaterial.Laminate;
+                    SurfaceMaterial = SurfaceMaterial.Laminate;
                     break;
                 case "pine":
                     materialCost = (double)SurfaceMaterial.Pine;
+                    SurfaceMaterial = SurfaceMaterial.Pine;
                     break;
                 case "rosewood":
                     materialCost = (double)SurfaceMaterial.Rosewood;
+                    SurfaceMaterial = SurfaceMaterial.Rosewood;
                     break;
                 case "veneer":
                     materialCost = (double)SurfaceMaterial.Veneer;
+                    SurfaceMaterial = SurfaceMaterial.Veneer;
                     break;
             }
             if (surfaceArea > 1000)
@@ -115,4 +121,5 @@ namespace MegaDesk_Muzo
         Drawer = 50
     }
 }
+
 

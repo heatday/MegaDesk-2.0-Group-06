@@ -12,9 +12,56 @@ namespace MegaDesk_Muzo
 {
     public partial class SearchQuotes : Form
     {
-        public SearchQuotes()
+        private QuoteManager quoteManager;
+
+        public SearchQuotes(QuoteManager quoteManager)
         {
             InitializeComponent();
+            this.quoteManager = quoteManager;
+            // Instantiate the dataGridView1 control
+            
+
+
+        }
+
+        private void SurMaterials_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedMaterial = SurMaterials.SelectedItem.ToString();
+            List<DeskQuote> filteredQuotes;
+
+            if (selectedMaterial == "All Materials")
+            {
+                filteredQuotes = quoteManager.Quotes;
+            }
+            else
+            {
+                filteredQuotes = quoteManager.Quotes
+                    .Where(quote => quote.Desk.Material.ToLower() == selectedMaterial.ToLower())
+                    .ToList();
+            }
+
+            // Clear existing columns
+            dataGridView1.Columns.Clear();
+
+
+            // Set data source
+            dataGridView1.DataSource = filteredQuotes;
+
+        
+         
+        }
+
+
+
+
+
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
+
+
+
