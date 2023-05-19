@@ -42,9 +42,10 @@ namespace MegaDesk_Muzo
             // 
             // ViewFirstForm
             // 
-            this.ViewFirstForm.Location = new System.Drawing.Point(56, 30);
+            this.ViewFirstForm.Location = new System.Drawing.Point(42, 24);
+            this.ViewFirstForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ViewFirstForm.Name = "ViewFirstForm";
-            this.ViewFirstForm.Size = new System.Drawing.Size(208, 63);
+            this.ViewFirstForm.Size = new System.Drawing.Size(156, 51);
             this.ViewFirstForm.TabIndex = 0;
             this.ViewFirstForm.Text = "&Add New Quote";
             this.ViewFirstForm.UseVisualStyleBackColor = true;
@@ -52,27 +53,31 @@ namespace MegaDesk_Muzo
             // 
             // ViewSecondForm
             // 
-            this.ViewSecondForm.Location = new System.Drawing.Point(56, 119);
+            this.ViewSecondForm.Location = new System.Drawing.Point(42, 97);
+            this.ViewSecondForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ViewSecondForm.Name = "ViewSecondForm";
-            this.ViewSecondForm.Size = new System.Drawing.Size(208, 65);
+            this.ViewSecondForm.Size = new System.Drawing.Size(156, 53);
             this.ViewSecondForm.TabIndex = 1;
             this.ViewSecondForm.Text = "&View Quotes";
             this.ViewSecondForm.UseVisualStyleBackColor = true;
+            this.ViewSecondForm.Click += new System.EventHandler(this.ViewSecondForm_Click);
             // 
             // ViewThirdForm
             // 
-            this.ViewThirdForm.Location = new System.Drawing.Point(56, 217);
+            this.ViewThirdForm.Location = new System.Drawing.Point(42, 176);
+            this.ViewThirdForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ViewThirdForm.Name = "ViewThirdForm";
-            this.ViewThirdForm.Size = new System.Drawing.Size(208, 67);
+            this.ViewThirdForm.Size = new System.Drawing.Size(156, 54);
             this.ViewThirdForm.TabIndex = 2;
             this.ViewThirdForm.Text = "&Search Quotes";
             this.ViewThirdForm.UseVisualStyleBackColor = true;
             // 
             // ViewFourthForm
             // 
-            this.ViewFourthForm.Location = new System.Drawing.Point(56, 318);
+            this.ViewFourthForm.Location = new System.Drawing.Point(42, 258);
+            this.ViewFourthForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ViewFourthForm.Name = "ViewFourthForm";
-            this.ViewFourthForm.Size = new System.Drawing.Size(208, 67);
+            this.ViewFourthForm.Size = new System.Drawing.Size(156, 54);
             this.ViewFourthForm.TabIndex = 3;
             this.ViewFourthForm.Text = "E&xit";
             this.ViewFourthForm.UseVisualStyleBackColor = true;
@@ -81,24 +86,26 @@ namespace MegaDesk_Muzo
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(421, 50);
+            this.pictureBox1.Location = new System.Drawing.Point(316, 41);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(320, 320);
+            this.pictureBox1.Size = new System.Drawing.Size(240, 260);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
             // MainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ViewFourthForm);
             this.Controls.Add(this.ViewThirdForm);
             this.Controls.Add(this.ViewSecondForm);
             this.Controls.Add(this.ViewFirstForm);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainMenu";
             this.Text = " Desk ";
             this.Load += new System.EventHandler(this.MainMenu_Load);
@@ -116,8 +123,9 @@ namespace MegaDesk_Muzo
 
         private void ViewSecondFormClick(object sender, EventArgs e)
         {
-            DisplayQuote displayQuoteForm = new DisplayQuote();
+            DisplayQuote displayQuoteForm = new DisplayQuote(ref QuoteManager, this);
             displayQuoteForm.Show();
+            this.Hide();
         }
 
 
