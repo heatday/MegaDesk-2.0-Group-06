@@ -10,17 +10,17 @@ namespace MegaDesk_Muzo
     {
         // FIELDS
         private Desk desk;
-        private double cost;
         private string customerName;
         private string rushType;
         private string date;
+        private double cost;
         private DateTime dateTime;
         // PROPERTIES
         public Desk Desk { get { return desk; } }
-        public double Cost { get { return cost; } }
         public string CustomerName { get { return customerName; } }
         public SurfaceMaterial SurfaceMaterial { get; set; }
         public string RushType { get { return rushType; } }
+        public double Cost { get { return cost; } }
         public string Date { get { return date; } }
         // CONSTRUCTOR
         public DeskQuote(Desk desk, string customerName, string rushType)
@@ -33,6 +33,26 @@ namespace MegaDesk_Muzo
             double surfaceArea = (desk.Width * desk.Depth);
             double materialCost = 0;
             double rushCost = 0;
+
+            // Assign the SurfaceMaterial based on the material of the desk
+            switch (desk.Material.ToLower())
+            {
+                case "oak":
+                    desk.SurfaceMaterial = SurfaceMaterial.Oak;
+                    break;
+                case "laminate":
+                    desk.SurfaceMaterial = SurfaceMaterial.Laminate;
+                    break;
+                case "pine":
+                    desk.SurfaceMaterial = SurfaceMaterial.Pine;
+                    break;
+                case "rosewood":
+                    desk.SurfaceMaterial = SurfaceMaterial.Rosewood;
+                    break;
+                case "veneer":
+                    desk.SurfaceMaterial = SurfaceMaterial.Veneer;
+                    break;
+            }
             switch (rushType)
             {
                 case "3 Days":

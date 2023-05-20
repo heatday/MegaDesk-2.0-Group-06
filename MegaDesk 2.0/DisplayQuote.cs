@@ -42,7 +42,9 @@ namespace MegaDesk_Muzo
                 row.Cells["Column5"].Value = $"{quote.Desk.Depth} in";
                 row.Cells["Column6"].Value = $"{quote.Desk.Width} in";
                 row.Cells["Column7"].Value = quote.Desk.DrawerCount;
-                row.Cells["Column8"].Value = $"{char.ToUpper(quote.Desk.Material[0])}{quote.Desk.Material.Substring(1)}";
+                row.Cells["Column8"].Value = !string.IsNullOrEmpty(quote.Desk.Material) && quote.Desk.Material.Length > 0
+                ? $"{char.ToUpper(quote.Desk.Material[0])}{quote.Desk.Material.Substring(1)}"
+    :           string.Empty;
                 row.Cells["Column2"].Value = quote.Date;
             }
         }

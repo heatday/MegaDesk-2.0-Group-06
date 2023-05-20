@@ -1,14 +1,19 @@
 ﻿using static System.Windows.Forms.VisualStyles.VisualStyleElement.ScrollBar;
 using System;
+using System.Windows.Forms;
+using MegaDesk_Muzo;
 
 namespace MegaDesk_Muzo
 {
+   
     partial class DisplayQuote
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+
+        
 
         /// <summary>
         /// Clean up any resources being used.
@@ -22,7 +27,7 @@ namespace MegaDesk_Muzo
             }
             base.Dispose(disposing);
         }
-
+        
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -69,6 +74,8 @@ namespace MegaDesk_Muzo
             this.BackButton.TabIndex = 2;
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = true;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
+
             // 
             // Column1
             // 
@@ -136,8 +143,9 @@ namespace MegaDesk_Muzo
             this.Text = "DisplayQuote";
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
             this.ResumeLayout(false);
-
+          
         }
+       
 
         #endregion
 
@@ -151,7 +159,13 @@ namespace MegaDesk_Muzo
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+
+
+      
     }
-    
+ 
+       
+
+
 }
 
