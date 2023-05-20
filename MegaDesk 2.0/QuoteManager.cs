@@ -1,31 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-
+using Newtonsoft.Json;
 
 namespace MegaDesk_Muzo
 {
     public class QuoteManager
     {
-        // FIELDS
-        private List<DeskQuote> quotes = new List<DeskQuote>();
+        private List<DeskQuote> quotes;
 
         public List<DeskQuote> Quotes
         {
             get { return quotes; }
         }
 
-        // METHODS
+        public QuoteManager()
+        {
+            if (File.Exists("C:\\Users\\offic\\Documents\\GitHub\\MegaDesk-2.0-Group-06\\MegaDesk 2.0\\quotes.json"))
+            {
+                string json = File.ReadAllText("C:\\Users\\offic\\Documents\\GitHub\\MegaDesk-2.0-Group-06\\MegaDesk 2.0\\quotes.json");
+                quotes = JsonConvert.DeserializeObject<List<DeskQuote>>(json);
+            }
+            else
+            {
+                quotes = new List<DeskQuote>(); // Initialize the quotes list if the file doesn't exist
+            }
+        }
+
         public void AddQuote(double depth, double width, double drawerCount, string material, string customerName, string rushType)
         {
+            if (quotes == null) // Check if quotes list is null
+                quotes = new List<DeskQuote>(); // Instantiate the quotes list if null
+
             Desk desk = new Desk(depth, width, drawerCount, material);
             DeskQuote quote = new DeskQuote(desk, customerName, rushType);
             quotes.Add(quote);
         }
 
-
         public void AddQuote(double depth, double width, double drawerCount, string material, string customerName, double cost, string rushType, string date)
         {
+            if (quotes == null) // Check if quotes list is null
+                quotes = new List<DeskQuote>(); // Instantiate the quotes list if null
+
             Desk desk = new Desk(depth, width, drawerCount, material);
             DeskQuote quote = new DeskQuote(desk, customerName, cost, rushType, date);
             quotes.Add(quote);
@@ -33,12 +49,8 @@ namespace MegaDesk_Muzo
 
         public void SaveQuote()
         {
-            using (StreamWriter io = new StreamWriter("C:\\Users\\offic\\Documents\\GitHub\\MegaDesk-2.0-Group-06\\MegaDesk 2.0\\Quotes.txt", true))
-            {
-                DeskQuote quote = quotes[quotes.Count - 1];
-                io.WriteLine($"{quote.CustomerName},{quote.Cost},{quote.RushType},{quote.Desk.Depth},{quote.Desk.Width},{quote.Desk.DrawerCount},{quote.Desk.Material},{quote.Date}");
-                
-            }
+            string json = JsonConvert.SerializeObject(quotes);
+            File.WriteAllText("C:\\Users\\offic\\Documents\\GitHub\\MegaDesk-2.0-Group-06\\MegaDesk 2.0\\quotes.json", json);
         }
     }
 }
