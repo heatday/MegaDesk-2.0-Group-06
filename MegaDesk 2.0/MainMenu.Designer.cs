@@ -43,7 +43,7 @@ namespace MegaDesk_Muzo
             // ViewFirstForm
             // 
             this.ViewFirstForm.Location = new System.Drawing.Point(42, 24);
-            this.ViewFirstForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ViewFirstForm.Margin = new System.Windows.Forms.Padding(2);
             this.ViewFirstForm.Name = "ViewFirstForm";
             this.ViewFirstForm.Size = new System.Drawing.Size(156, 51);
             this.ViewFirstForm.TabIndex = 0;
@@ -54,7 +54,7 @@ namespace MegaDesk_Muzo
             // ViewSecondForm
             // 
             this.ViewSecondForm.Location = new System.Drawing.Point(42, 97);
-            this.ViewSecondForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ViewSecondForm.Margin = new System.Windows.Forms.Padding(2);
             this.ViewSecondForm.Name = "ViewSecondForm";
             this.ViewSecondForm.Size = new System.Drawing.Size(156, 53);
             this.ViewSecondForm.TabIndex = 1;
@@ -65,7 +65,7 @@ namespace MegaDesk_Muzo
             // ViewThirdForm
             // 
             this.ViewThirdForm.Location = new System.Drawing.Point(42, 176);
-            this.ViewThirdForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ViewThirdForm.Margin = new System.Windows.Forms.Padding(2);
             this.ViewThirdForm.Name = "ViewThirdForm";
             this.ViewThirdForm.Size = new System.Drawing.Size(156, 54);
             this.ViewThirdForm.TabIndex = 2;
@@ -76,7 +76,7 @@ namespace MegaDesk_Muzo
             // ViewFourthForm
             // 
             this.ViewFourthForm.Location = new System.Drawing.Point(42, 258);
-            this.ViewFourthForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ViewFourthForm.Margin = new System.Windows.Forms.Padding(2);
             this.ViewFourthForm.Name = "ViewFourthForm";
             this.ViewFourthForm.Size = new System.Drawing.Size(156, 54);
             this.ViewFourthForm.TabIndex = 3;
@@ -87,10 +87,10 @@ namespace MegaDesk_Muzo
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(316, 41);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(245, 11);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(240, 260);
+            this.pictureBox1.Size = new System.Drawing.Size(358, 357);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -106,7 +106,7 @@ namespace MegaDesk_Muzo
             this.Controls.Add(this.ViewThirdForm);
             this.Controls.Add(this.ViewSecondForm);
             this.Controls.Add(this.ViewFirstForm);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainMenu";
             this.Text = " Desk ";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
