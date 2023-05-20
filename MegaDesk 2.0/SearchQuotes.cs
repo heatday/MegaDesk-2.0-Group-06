@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,9 +19,9 @@ namespace MegaDesk_Muzo
         {
             InitializeComponent();
             this.quoteManager = quoteManager;
-            // Instantiate the dataGridView1 control
-            
+            // Instantiate the DataGridView control
 
+            DataGridView.DataError += DataGridView_DataError;
 
         }
 
@@ -36,19 +37,33 @@ namespace MegaDesk_Muzo
             else
             {
                 filteredQuotes = quoteManager.Quotes
-                    .Where(quote => quote.Desk.Material.ToLower() == selectedMaterial.ToLower())
+                    .Where(quote => string.Equals(quote.Desk.Material, selectedMaterial, StringComparison.OrdinalIgnoreCase))
                     .ToList();
             }
 
             // Clear existing columns
-            dataGridView1.Columns.Clear();
-
+            DataGridView.Columns.Clear();
 
             // Set data source
-            dataGridView1.DataSource = filteredQuotes;
+            DataGridView.DataSource = filteredQuotes;
+        }
 
-        
-         
+
+
+        private void DataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            // Handle the error by providing a default value for the cell
+            if (e.ColumnIndex == DataGridView.Columns["SurfaceMaterial"].Index)
+            {
+                e.ThrowException = false;
+                e.Cancel = false;
+
+                // Get the original SurfaceMaterial value from the DeskQuote object
+                DeskQuote quote = DataGridView.Rows[e.RowIndex].DataBoundItem as DeskQuote;
+                SurfaceMaterial originalMaterial = quote?.Desk.SurfaceMaterial ?? SurfaceMaterial.Oak;
+
+                DataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = originalMaterial;
+            }
         }
 
 
@@ -62,6 +77,3 @@ namespace MegaDesk_Muzo
         }
     }
 }
-
-
-

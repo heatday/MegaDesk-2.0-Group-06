@@ -13,7 +13,8 @@ namespace MegaDesk_Muzo
         private double width;
         private double drawerCount;
         private string material;
-
+        internal SurfaceMaterial SurfaceMaterial;
+       
         public const int MinWidth = 24;
         public const int MaxWidth = 96;
         public const int MinDepth = 12;

@@ -7,12 +7,12 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.DataGridView dataGridView1 = new System.Windows.Forms.DataGridView
+        private System.Windows.Forms.DataGridView DataGridView = new System.Windows.Forms.DataGridView
         {
             AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill,
             ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize,
             Location = new System.Drawing.Point(12, 80),
-            Name = "dataGridView1",
+            Name = "DataGridView",
             Size = new System.Drawing.Size(776, 358),
             TabIndex = 2
         };
@@ -43,7 +43,7 @@
             
             this.label1 = new System.Windows.Forms.Label();
             this.SurMaterials = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -67,6 +67,9 @@
             //"Rosewood",
             //"Veneer",
             //"Pine"});
+
+
+
             this.SurMaterials.Items.AddRange(new object[] {
             "All Materials",
             SurfaceMaterial.Laminate.ToString(),
@@ -80,15 +83,15 @@
             this.SurMaterials.TabIndex = 1;
             this.SurMaterials.SelectedIndexChanged += new System.EventHandler(this.SurMaterials_SelectedIndexChanged);
             // 
-            // dataGridView1
+            // DataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 80);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 358);
-            this.dataGridView1.TabIndex = 2;
-            this.Controls.Add(this.dataGridView1);
+            this.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridView.Location = new System.Drawing.Point(12, 80);
+            this.DataGridView.Name = "DataGridView";
+            this.DataGridView.RowHeadersWidth = 51;
+            this.DataGridView.Size = new System.Drawing.Size(776, 358);
+            this.DataGridView.TabIndex = 2;
+            this.Controls.Add(this.DataGridView);
             // 
             // SearchQuotes
             // 
@@ -99,7 +102,7 @@
             this.Controls.Add(this.label1);
             this.Name = "SearchQuotes";
             this.Text = "SearchQuotes";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

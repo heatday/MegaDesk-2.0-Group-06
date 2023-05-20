@@ -26,14 +26,14 @@ namespace MegaDesk_Muzo
 
         private void LoadQuotesIntoDataGridView()
         {
-            dataGridView1.Rows.Clear(); // Clear existing rows
+            DataGridView.Rows.Clear(); // Clear existing rows
 
             foreach (DeskQuote quote in quoteManager.Quotes)
             {
-                int rowIndex = dataGridView1.Rows.Add(); // Add a new row
+                int rowIndex = DataGridView.Rows.Add(); // Add a new row
 
                 // Access the newly added row
-                DataGridViewRow row = dataGridView1.Rows[rowIndex];
+                DataGridViewRow row = DataGridView.Rows[rowIndex];
 
                 // Assign the components of the Quote to specific columns
                 row.Cells["Column1"].Value = quote.CustomerName;

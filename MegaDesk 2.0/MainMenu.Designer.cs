@@ -71,6 +71,7 @@ namespace MegaDesk_Muzo
             this.ViewThirdForm.TabIndex = 2;
             this.ViewThirdForm.Text = "&Search Quotes";
             this.ViewThirdForm.UseVisualStyleBackColor = true;
+            this.ViewThirdForm.Click += new System.EventHandler(this.ViewThirdFormClick);
             // 
             // ViewFourthForm
             // 
@@ -131,7 +132,7 @@ namespace MegaDesk_Muzo
 
         private void ViewThirdFormClick(object sender, EventArgs e)
         {
-            SearchQuotes searchQuotesForm = new SearchQuotes();
+            SearchQuotes searchQuotesForm = new SearchQuotes(QuoteManager);
             searchQuotesForm.Show();
         }
 

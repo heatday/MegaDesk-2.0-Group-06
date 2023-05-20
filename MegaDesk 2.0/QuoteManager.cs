@@ -22,6 +22,8 @@ namespace MegaDesk_Muzo
             DeskQuote quote = new DeskQuote(desk, customerName, rushType);
             quotes.Add(quote);
         }
+
+
         public void AddQuote(double depth, double width, double drawerCount, string material, string customerName, double cost, string rushType, string date)
         {
             Desk desk = new Desk(depth, width, drawerCount, material);
