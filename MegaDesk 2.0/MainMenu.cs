@@ -17,12 +17,7 @@ namespace MegaDesk_Muzo
         public MainMenu()
         {
             InitializeComponent();
-            string[] quotes = File.ReadAllLines("C:\\Users\\offic\\Documents\\GitHub\\MegaDesk-2.0-Group-06\\MegaDesk 2.0\\quotes.json");
-            foreach (string quote in quotes)
-            {
-                string[] data = quote.Split(',');
-                QuoteManager.AddQuote(double.Parse(data[3]), double.Parse(data[4]), int.Parse(data[5]), data[6], data[0], double.Parse(data[1]), data[2], data[7]);
-            }
+            
         }
 
         private void MainMenu_Load(object sender, EventArgs e)

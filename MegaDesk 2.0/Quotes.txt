@@ -1,4 +1,0 @@
-Nephi,450,3 days,12,24,3,laminate,5/18/2023
-Jacob,350,Standard,18,40,2,pine,5/18/2023
-Hello,250,3 days,12,24,1,laminate,5/19/2023
-asdas,250,3 days,12,24,1,laminate,5/19/2023
