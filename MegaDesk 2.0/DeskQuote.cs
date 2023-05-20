@@ -63,29 +63,7 @@ namespace MegaDesk_Muzo
                     rushCost = 0;
                     break;
             }
-            switch (desk.Material.ToLower())
-            {
-                case "oak":
-                    materialCost = (double)SurfaceMaterial.Oak;
-                    SurfaceMaterial = SurfaceMaterial.Oak;
-                    break;
-                case "laminate":
-                    materialCost = (double)SurfaceMaterial.Laminate;
-                    SurfaceMaterial = SurfaceMaterial.Laminate;
-                    break;
-                case "pine":
-                    materialCost = (double)SurfaceMaterial.Pine;
-                    SurfaceMaterial = SurfaceMaterial.Pine;
-                    break;
-                case "rosewood":
-                    materialCost = (double)SurfaceMaterial.Rosewood;
-                    SurfaceMaterial = SurfaceMaterial.Rosewood;
-                    break;
-                case "veneer":
-                    materialCost = (double)SurfaceMaterial.Veneer;
-                    SurfaceMaterial = SurfaceMaterial.Veneer;
-                    break;
-            }
+            
             if (surfaceArea > 1000)
                 this.cost += (double)Price.SurfaceArea * (surfaceArea - 1000);
             this.cost += (double)Price.Base + ((double)Price.Drawer * Desk.DrawerCount) + materialCost + rushCost;
@@ -98,6 +76,25 @@ namespace MegaDesk_Muzo
             this.rushType = rushType;
             this.cost = cost;
             this.date = date;
+            // Assign the SurfaceMaterial based on the material of the desk
+            switch (desk.Material.ToLower())
+            {
+                case "oak":
+                    desk.SurfaceMaterial = SurfaceMaterial.Oak;
+                    break;
+                case "laminate":
+                    desk.SurfaceMaterial = SurfaceMaterial.Laminate;
+                    break;
+                case "pine":
+                    desk.SurfaceMaterial = SurfaceMaterial.Pine;
+                    break;
+                case "rosewood":
+                    desk.SurfaceMaterial = SurfaceMaterial.Rosewood;
+                    break;
+                case "veneer":
+                    desk.SurfaceMaterial = SurfaceMaterial.Veneer;
+                    break;
+            }
         }
         public bool ContainsTerm(string searchTerm)
         {
