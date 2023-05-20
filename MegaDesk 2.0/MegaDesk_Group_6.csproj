@@ -124,5 +124,8 @@
   <ItemGroup>
     <EmbeddedResource Include="computer-desktop-with-pen-tablet-on-wood-table-vector-4938874-removebg-preview.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="RushCost.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

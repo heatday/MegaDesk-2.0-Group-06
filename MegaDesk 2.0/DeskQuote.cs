@@ -57,27 +57,27 @@ namespace MegaDesk_Muzo
             {
                 case "3 Days":
                     if (surfaceArea < 1000)
-                        rushCost = 60;
+                        rushCost = MainMenu.RushCost[0];
                     else if (surfaceArea >= 1000 && surfaceArea < 2000)
-                        rushCost = 70;
+                        rushCost = MainMenu.RushCost[1];
                     else
-                        rushCost = 80;
+                        rushCost = MainMenu.RushCost[2];
                     break;
                 case "5 Days":
                     if (surfaceArea < 1000)
-                        rushCost = 40;
+                        rushCost = MainMenu.RushCost[3];
                     else if (surfaceArea >= 1000 && surfaceArea < 2000)
-                        rushCost = 50;
+                        rushCost = MainMenu.RushCost[4];
                     else
-                        rushCost = 60;
+                        rushCost = MainMenu.RushCost[5];
                     break;
                 case "7 Days":
                     if (surfaceArea < 1000)
-                        rushCost = 30;
+                        rushCost = MainMenu.RushCost[6];
                     else if (surfaceArea >= 1000 && surfaceArea < 2000)
-                        rushCost = 35;
+                        rushCost = MainMenu.RushCost[7];
                     else
-                        rushCost = 40;
+                        rushCost = MainMenu.RushCost[8];
                     break;
                 default:
                     rushCost = 0;

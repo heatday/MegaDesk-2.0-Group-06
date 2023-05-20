@@ -162,7 +162,7 @@ namespace MegaDesk_Muzo
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // groupBox2
             // 
@@ -198,9 +198,9 @@ namespace MegaDesk_Muzo
             this.label6.Location = new System.Drawing.Point(4, 87);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 20);
+            this.label6.Size = new System.Drawing.Size(50, 20);
             this.label6.TabIndex = 9;
-            this.label6.Text = "Delivery:";
+            this.label6.Text = "Rush:";
             // 
             // SurCombo
             // 
